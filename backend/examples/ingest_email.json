@@ -1,0 +1,19 @@
+{
+  "message_id": "example-f4cswmfo",
+  "subject": "23-1987 | RFI: Curtain Track Detail at D213",
+  "sender": "pm@generalcontractor.com",
+  "to": [
+    "bids@peninsulators.com"
+  ],
+  "cc": [
+    "mpansegrau@peninsulators.com"
+  ],
+  "body_text": "Please respond by Friday. See attached. Job 23-1987.",
+  "attachments": [
+    {
+      "filename": "A-601.pdf",
+      "content_type": "application/pdf",
+      "size_bytes": 1240000
+    }
+  ]
+}

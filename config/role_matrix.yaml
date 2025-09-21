@@ -1,0 +1,13 @@
+# Phase/intent routing defaults (v1)
+Pre:
+  default_owner_role: Estimating
+  intents:
+    rfi: Estimating
+    submittal: Estimating
+    change_order: Estimating
+Post:
+  default_owner_role: PMPE
+  intents:
+    rfi: PMPE
+    submittal: PMPE
+    change_order: PMPE

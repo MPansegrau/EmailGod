@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports: ["5432:5432"]
+    volumes: [db_data:/var/lib/postgresql/data]
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+  api:
+    build: ./backend
+    env_file: .env
+    depends_on: [db, redis]
+    ports: ["8080:8080"]
+    volumes:
+      - ./config:/app/config
+  worker:
+    build: ./backend
+    command: ["python","-m","app.scripts.worker"]
+    env_file: .env
+    depends_on: [api, redis, db]
+volumes:
+  db_data:

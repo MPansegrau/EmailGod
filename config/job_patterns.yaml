@@ -1,0 +1,6 @@
+# Regex and fields to harvest for job resolution
+patterns:
+  - name: job_number
+    regex: "\b\d{2}-\d{4}\b"
+  - name: gc_project_id
+    regex: "GCID[:\s]*([A-Z0-9-]+)"

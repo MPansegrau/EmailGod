@@ -1,0 +1,7 @@
+# Simple RBAC seeds; expand later
+roles:
+  - Exec
+  - Manager
+  - TeamMember
+  - Estimating
+  - Admin
