@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 # EmailGod
-Magic Task Creator
-=======
-# Intelligent Task Creation (ITC) — MVP
 
-Cloud-first task creation system for Peninsulators.
+Magic Task Creator — an intelligent task creation system for Peninsulators.
+
 - Source of Truth: Postgres
 - Task UI: Trello (synced)
 - ChatOps: Zoom Team Chat (slash commands)
@@ -13,19 +10,21 @@ Cloud-first task creation system for Peninsulators.
 
 ## Quick Start (Dev)
 
-1) Copy `.env.example` to `.env` and fill secrets.
-2) `docker compose up -d --build`
-3) Initialize DB and seed: `docker compose exec api python -m app.scripts.dev_seed`
-4) Hit health: http://localhost:8080/health
-5) Try example: `POST /ingest/email` with `examples/ingest_email.json`
+1. Copy `.env.example` to `.env` and fill in secrets.
+2. Run `docker compose up -d --build`.
+3. Initialize and seed the database: `docker compose exec api python -m app.scripts.dev_seed`.
+4. Hit the health check: http://localhost:8080/health.
+5. Try the example request: `POST /ingest/email` with the payload in `examples/ingest_email.json`.
 
 ## Services
-- api: FastAPI + SQLAlchemy
-- worker: background queue (RQ) for heavy jobs (plan indexing)
-- db: Postgres
-- redis: queues & caching
+
+- **api**: FastAPI + SQLAlchemy
+- **worker**: background queue (RQ) for heavy jobs (plan indexing)
+- **db**: Postgres
+- **redis**: queues & caching
 
 ## Repo Layout
+
 ```
 backend/app
   ├─ routers/        # HTTP endpoints
@@ -43,4 +42,3 @@ config/
 n8n/
   └─ README.md
 ```
->>>>>>> 4a68e49 (Initial commit)
